@@ -2,7 +2,7 @@
 
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) to run mongo commands (http://www.mongodb.org/). We used it for `mongodump` and `mongorestore` in database cron scripts.
 
-Be default, this implemented will install `v4.0.8`, the current release version of Mongo (as of April 2019).
+You should set the mongo version with eniroment variable MONGO_VERSION.
 
 ## Usage
 
@@ -13,6 +13,9 @@ Example usage:
 
     # add buildpack to an existing app
     heroku buildpacks:set http://github.com/uhray/heroku-buildpack-mongo.git -a <app-name>
-
+    
+    # Set mongo version
+    heroku config:set MONGO_VERSION=4.0.8
+    
     # pushing to heroku will then create a new release using this buildpack
     git push heroku master
