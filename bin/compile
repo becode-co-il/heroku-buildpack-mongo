@@ -21,6 +21,7 @@ VERSION=${MONGO_VERSION}
 echo "Downloading and installing mongodb version $VERSION ..."
 BASE_FILE_NAME="mongodb-linux-x86_64-ubuntu1804-${VERSION}"
 download_url="https://fastdl.mongodb.org/linux/${BASE_FILE_NAME}.tgz"
+echo "$download_url"
 curl $download_url -s -o - | tar xzf - -C /tmp
 
 # Move mongodb binaries into the app directory
