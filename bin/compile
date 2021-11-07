@@ -27,6 +27,9 @@ curl $download_url -s -o - | tar xzf - -C /tmp
 mv /tmp/${BASE_FILE_NAME}/* $HEROKU_DIR/mongo
 chmod +x $HEROKU_DIR/mongo/bin/*
 
+echo "BUILD_DIR $BUILD_DIR"
+echo "HOME $HOME"
+
 echo "Creating run-time environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $BUILD_DIR/.profile.d/mongo.sh
